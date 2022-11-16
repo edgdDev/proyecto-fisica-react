@@ -24,8 +24,8 @@ export const BtnMyLocation = () => {
             className="btn btn-primary"
             onClick={ onClick }
             style={{
-                position: 'fixed',
-                top: '20px',
+                position: 'absolute',
+                top: '60px',
                 right: '20px',
                 zIndex: 999
             }}

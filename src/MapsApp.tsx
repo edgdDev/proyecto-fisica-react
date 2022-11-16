@@ -1,7 +1,7 @@
 import { MapProvider, PlacesProvider } from './context';
 import { HomeScreen } from './screens';
 
-import './styles.css';
+import './styles.scss';
 
 export const MapsApp = () => {
     return (

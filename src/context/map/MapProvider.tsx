@@ -35,7 +35,7 @@ export const MapProvider = ({ children }: Props) => {
 
     const [state, dispatch] = useReducer( mapReducer, INITIAL_STATE );
     const { places } = useContext( PlacesContext );
-
+    // console.log(places)
     useEffect(() => {
         state.markers.forEach( marker => marker.remove() );
         const newMarkers: Marker[] = [];

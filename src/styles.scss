@@ -1,0 +1,66 @@
+.loading-map {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    // height: 100vh; 
+    // position: fixed;
+    // right: 0;
+    // top: 0;
+    // width: 100vw;
+}
+
+.search-container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    // left: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 60px;
+    width: 250px;
+    z-index: 999;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
+
+$light: #ffffff;
+// $gray: #c4ccde;
+$gray: #e7e9eb;
+
+.navbar {
+    background-color: $light;
+    padding: 1rem 2rem;
+    // border-bottom: 1px solid $gray;
+}
+
+.sidebar {
+    width: 13.5rem;
+    // height:  calc(100vh - 52px);
+    // height: 100vh;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid $gray;
+    border-top: 1px solid $light;
+
+    ul {
+        list-style: none;
+        padding: 1rem 2rem;
+        li {
+            margin-bottom: 1rem;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.flex {
+    display: flex;
+
+}
+
+.content {
+    width: 90%;
+}

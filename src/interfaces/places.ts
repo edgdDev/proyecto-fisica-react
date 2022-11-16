@@ -20,7 +20,7 @@ export interface Feature {
     bbox?:         number[];
     center:        number[];
     geometry:      Geometry;
-    context:       Context[];
+    context?:       Context[];
 }
 
 export interface Context {

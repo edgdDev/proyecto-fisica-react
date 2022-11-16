@@ -5,6 +5,7 @@ import { getUserLocation } from '../../helpers/getUserLocation';
 import { searchApi } from '../../apis';
 
 import { Feature, PlacesResponse } from '../../interfaces/places';
+import { lugares } from '../map/lugares';
 
 export interface PlacesState {
     isLoading: boolean;
@@ -18,6 +19,7 @@ const INITIAL_STATE: PlacesState = {
     userLocation: undefined,
     isLoadingPlaces: false,
     places: [],
+    // places: lugares,
 }
 
 interface Props {
@@ -36,21 +38,27 @@ export const PlacesProvider = ({ children }: Props) => {
     
     const searchPlacesByTerm = async( query: string ): Promise<Feature[]> => {
         if ( query.length === 0 ) {
-            dispatch({ type: 'setPlaces', payload: [] });
-            return [];
+            // dispatch({ type: 'setPlaces', payload: [] });
+            // return [];
+            setTimeout(() => {
+                dispatch({ type: 'setPlaces', payload: lugares });
+            }, 1500)
+            return lugares;
         }
-        if ( !state.userLocation ) throw new Error('No hay ubicación del usuario');
+        // if ( !state.userLocation ) throw new Error('No hay ubicación del usuario');
 
         dispatch({ type: 'setLoadingPlaces' });
 
         const resp = await searchApi.get<PlacesResponse>(`/${ query }.json`, {
             params: {
-                proximity: state.userLocation.join(',')
+                proximity: state.userLocation?.join(',')
             }
         });
-
-        dispatch({ type: 'setPlaces', payload: resp.data.features });
-        return resp.data.features;
+        
+        // dispatch({ type: 'setPlaces', payload: resp.data.features });
+        // return resp.data.features;
+        dispatch({ type: 'setPlaces', payload: lugares });
+        return lugares;
     }
 
 
